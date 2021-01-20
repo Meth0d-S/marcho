@@ -2,6 +2,7 @@
 @import 'global';
 @import 'fonts';
 @import 'reset';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
 
 .header{
   padding: 40px 0;
@@ -119,7 +120,6 @@
     color: $default;
     margin-bottom: 10px;
   }
-
   &__send{
     max-width: 470px;
   }
@@ -133,19 +133,14 @@
     height: 50px;
     max-width: 350px;
     width: 100%;
+    box-shadow: 0px 7px 20px 0px rgba($default, 0.3);
     border: none;
     outline: none;
     padding: 0 15px;
     margin-right: 10px;
   }
   &__btn{
-    text-transform: uppercase;
-    color: #ffffff;
-    font-size: 16px;
-    @extend %roboto-400;
-    height: 50px;
-    border: none;
-    background-color: $accent;
+    @extend %btn;
     padding: 0 22px;
   }
 }
@@ -163,5 +158,82 @@
     margin-left: 25px;
   }
 }
+
+.top-slider{
+  background-image: url('../images/top-slider-bg.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: $bg;
+  padding-bottom: 70px;
+  &__container{
+    width: 1520px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  &__item{
+    display: flex !important;
+    padding-top: 70px;
+  }
+  &__content{
+    margin: 120px 100px 0 160px;
+  }
+  &__title{
+    color: $title;
+    @extend %roboto-700;
+    font-size: 58px;
+    line-height: 68px;
+    margin-bottom: 30px;
+  }
+  &__text{
+    width: 470px;
+    margin-bottom: 55px;
+  }
+  &__btn{
+    display: inline-block;
+    @extend %btn;
+  }
+}
+
+.slick-dots{
+  display: flex;
+  justify-content: center;
+  margin-top: -70px;
+  li + li{
+    margin-left: 5px;
+  }
+  li{
+    button{
+      font-size: 0;
+      line-height: 0;
+      padding: 0;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      outline: none;
+      &::after{
+        @extend %pseudo;
+        width: 6px;
+        height: 6px;
+        background-color: $default;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .slick-active button{
+    border: 1px solid $accent;
+    border-radius: 50%;
+    &::after{
+      background-color: $accent;
+    }
+  }
+}
+
+
 
 @import 'media';

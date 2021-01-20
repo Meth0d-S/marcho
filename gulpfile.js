@@ -35,8 +35,9 @@ function styles(){
 }
 
 function scripts(){
-  return src([    
+  return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'app/js/**/*.js',
     '!app/js/main.min.js'
   ])
