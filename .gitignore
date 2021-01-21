@@ -7,5 +7,3 @@ npm-debug.*
 
 node_modules/
 dist/
-package-lock.json
-scss/
