@@ -165,6 +165,69 @@
   }
 }
 
+.top{
+  &__container{
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+  &__inner{
+    background-image: url('../images/top-bg.jpg');
+    background-repeat: no-repeat;
+    padding: 130px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title{
+    text-transform: uppercase;
+    @extend %roboto-400;
+    font-size: 48px;
+    color: #15181d;
+    margin-bottom: 25px;
+  }
+}
+
+.breadcrumbs{
+  &__list{
+    display: flex;
+  }
+  &__item{
+    color: $default;
+    padding-right: 40px;
+    position: relative;
+    &::after{
+      @extend %pseudo;
+      width: 9px;
+      height: 10px;
+      background-image: url('../images/icons/angle-right.svg');
+      right: 16px;
+      top: 9px;
+    }
+    &:first-child{
+      padding-left: 25px;
+      &::before{
+        @extend %pseudo;
+        width: 16px;
+        height: 16px;
+        background-image: url('../images/icons/home.svg');
+        left: -7px;
+        top: 4px;
+      }
+    }
+    &:last-child{
+      padding-right: 0;
+      color: $accent;
+      &::after{
+        background-image: none;
+      }
+    }
+  }
+  &__link{
+    color: inherit;
+  }
+}
+
 .top-slider{
   background-image: url('../images/top-slider-bg.png');
   background-repeat: no-repeat;
