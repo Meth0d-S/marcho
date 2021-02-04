@@ -811,6 +811,8 @@
     border: none;
     background-color: #f6f6f6;
     margin-bottom: 40px;
+    padding: 0 10px;
+    outline: none;
   }
   &__btn{
     width: 100%;
@@ -828,6 +830,9 @@
   }
   &__lost{
     color: $accent;
+  }
+  &__text{
+    margin-bottom: 35px;
   }
 }
 
