@@ -1721,6 +1721,11 @@
   &__item--no-image{
     box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
   }
+  &__item-img{
+    width: 770px;
+    height: 450px;
+    object-fit: cover;
+  }
   &__item-inner{
     padding: 45px 40px 0;
   }
@@ -1876,7 +1881,209 @@
   }
 }
 
+.blog-one{
+  &__img{
+    width: 770px;
+    height: 480px;
+    object-fit: cover;
+  }
+  &__info{
+    display: flex;
+    margin-bottom: 25px;
+  }
+  &__info-item{
+    padding-left: 26px;
+    color: $default;
+    position: relative;
+    & + .blog-one__info-item{
+      margin-left: 30px;
+    }
+    &::before{
+      @extend %pseudo;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 5px;
+      background-image: url('../images/icons/calendar.svg');
+    }
+  }
+  &__info-comments::before{
+    background-image: url('../images/icons/comment.svg');
+  }
+  &__info-author::before{
+    background-image: url('../images/icons/user-accent.svg');
+  }
+  &__content-inner{
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 25px 30px;
+    h2{
+      @extend %roboto-500;
+      font-size: 22px;
+      color: $title;
+      margin: 25px 0;
+    }
+    p{
+      margin: 25px 0;
+    }
+    blockquote{
+      background-color: $bg;
+      border-left: 3px solid $accent;
+      padding: 35px 35px 35px 40px;
+      @extend %roboto-500;
+      font-size: 22px;
+      line-height: 32px;
+      color: $title;
+      margin: 25px 0;
+    }
+    .blog-one__left{
+      float: left;
+      margin-right: 30px;
+    }
+    .blog-one__right{
+      float: right;
+      margin-left: 30px;
+    }
+  }
+  &__author{
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ececec;
+  }
+  &__author-inner{
+    display: flex;
+  }
+  &__author-img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin-right: 30px;
+  }
+  &__author-name{
+    @extend %roboto-500;
+    color: $title;
+    font-size: 22px;
+    margin: 5px 0 25px;
+    text-transform: uppercase;
+  }
+  &__comments{
+    padding: 40px 0;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 40px;
+  }
+  &__comments-title{
+    @extend %roboto-700;
+    font-size: 24px;
+    color: $title;
+    margin-bottom: 25px;
+  }
+  &__comments-item{
+    display: flex;
+    margin-bottom: 25px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__comments-img{
+    margin-right: 30px;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+  &__comments-info{
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__comments-name{
+    @extend %roboto-400;
+    color: $title;
+    margin-right: 15px;
+  }
+  &__comments-date{
+    padding-left: 17px;
+    position: relative;
+    &::before{
+      content: "|";
+      position: absolute;
+      left: 0;
+    }
+  }
+  &__comments-reply{
+    padding-left: 26px;
+    position: relative;
+    &::before{
+      @extend %pseudo;
+      width: 15px;
+      height: 13px;
+      left: 0;
+      top: 7px;
+      background-image: url('../images/icons/reply.svg');
+    }
+  }
+  &__form-title{
+    @extend %roboto-700;
+    font-size: 24px;
+    color: $title;
+    margin-bottom: 25px;
+  }
+  &__form-box{
+    display: flex;
+    margin-bottom: 30px;
+  }
+  &__form-input{
+    outline: none;
+    height: 60px;
+    padding: 0 25px;
+    width: 100%;
+    border: 1px solid #ececec;
+    & + .blog-one__form-input{
+      margin-left: 30px;
+    }
+  }
+  &__form-textarea{
+    outline: none;
+    height: 220px;
+    width: 100%;
+    border: 1px solid #ececec;
+    padding: 25px;
+    margin-bottom: 30px;
+    resize: none;
+  }
+  &__form-btn{
+    @extend %btn;
+    cursor: pointer;
+  }
+}
 
+.tags-share{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 30px;
+  line-height: 16px;
+  &__list{
+    display: flex;
+    align-items: center;
+    li + li{
+      margin-left: 15px;
+    }
+  }
+  &__title{
+    text-transform: uppercase;
+    color: $title;
+  }
+  &__list-link{
+    color: $default;
+    path{
+      fill: #727272;
+    }
+    &:hover{
+      color: $accent;
+      path{
+        fill: $accent;
+      }
+    }
+  }
+}
 
 
 @import 'media';
