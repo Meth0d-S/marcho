@@ -1,0 +1,458 @@
+@import 'vars';
+@import 'global';
+@import 'fonts';
+@import 'reset';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/rateyo/src/jquery.rateyo';
+@import '../module/_header/header';
+@import '../module/_footer/footer';
+@import '../module/_top/top';
+
+.product{
+  padding: 120px 0;
+  &__inner{
+    display: flex;
+  }
+}
+
+.product-slider{
+  &__small{
+    margin-right: 30px;
+    width: 140px;
+    float: left;
+  }
+  &__small-item{
+    height: 140px;
+    width: 140px;
+    margin-bottom: 23px;
+    cursor: pointer;
+  }
+  &__small-img{
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+  }
+  &__big{
+    width: 560px;
+    float: left;
+  }
+  &__big-item{
+    height: 650px;
+    width: 560px;
+  }
+  &__big-img{
+    height: 650px;
+    width: 560px;
+    object-fit: cover;
+  }
+}
+
+.product-content{
+  width: 370px;
+  margin-left: 70px;
+  &__title{
+    @extend %roboto-500;
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 20px;
+  }
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  &__price{
+    display: flex;
+    font-size: 18px;
+  }
+  &__price--new{
+    color: $title;
+    margin-right: 15px;
+  }
+  &__price--old{
+    text-decoration: line-through;
+  }
+  &__rate{
+    display: flex;
+    align-items: center;
+  }
+  &__rate-text{
+    color: $title;
+    font-size: 18px;
+    margin-left: 5px;
+  }
+  &__subtitle{
+    @extend %roboto-400;
+    font-size: 18px;
+    color: $title;
+  }
+  &__text{
+    margin-bottom: 40px;
+  }
+  &__color-form{
+    display: flex;
+    height: 70px;
+  }
+  &__color-label + .product-content__color-label{
+    margin-left: 34px;
+  }
+  &__color-input{
+    @extend %radio-hide;
+    &:checked + .product-content__color-radio{
+      &::after{
+        border-color: $accent;
+      }
+    }
+  }
+  &__color-radio{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    &::after{
+      @extend %pseudo;
+      width: 24px;
+      height: 24px;
+      border: 1px solid #d6d6d8;
+      top: -4px;
+      left: -4px;
+    }
+  }
+  &__size-filter{
+    margin-bottom: 35px;
+  }
+  &__size-form{
+    margin-top: 10px;
+    display: flex;
+  }
+  &__size-label + .product-content__size-label{
+    margin-left: 10px;
+  }
+  &__size-input{
+    @extend %radio-hide;
+    &:checked + .product-content__size-radio{
+      border-color: $accent;
+      background-color: $accent;
+      span{
+        color: #fff;
+      }
+    }
+  }
+  &__size-radio{
+    border: 1px solid #ececec;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__info-box{
+    display: flex;
+    margin-bottom: 40px;
+  }
+  &__info-list{
+    & + .product-content__info-list{
+      margin-left: 20px;
+    }
+    li{
+      margin-bottom: 5px;
+    }
+  }
+  &__info-title{
+    color: $title;
+  }
+  &__info-category{
+    color: $default;
+    &:hover{
+      color: $accent;
+    }
+  }
+  &__info-tag{
+    color: $default;
+    position: relative;
+    padding-right: 8px;
+    &::after{
+      content: "|";
+      color: $default;
+      position: absolute;
+      right: 0;
+    }
+    &:last-child{
+      padding-right: 0;
+      &::after{
+        content: "";
+      }
+    }
+    &:hover{
+      color: $accent;
+    }
+  }
+  &__info-link{
+    path{
+      fill: $default;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    } 
+    & + .product-content__info-link{
+      margin-left: 15px;
+    }
+  }
+  &__form{
+    display: flex;
+    align-items: center;
+  }
+  &__input{
+    position: relative;
+    width: 114px;
+    height: 50px;
+    border: none;
+    outline: none;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    &::placeholder{
+      color: $title;
+    }
+  }
+  &__btn{
+    @extend %btn;
+    cursor: pointer;
+    margin-left: 15px;
+    text-transform: none;
+  }
+}
+
+
+.jq-number{
+  border: none;
+  @extend %quicksand-500;
+  color: $title;
+  &__field{
+    border: none;
+    input{
+      text-align: center;
+    }
+  }
+  &__spin.minus{
+    background-image: url('../images/content/product/icons/minus.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    cursor: pointer;
+  }
+  &__spin.plus{
+    background-image: url('../images/content/product/icons/plus.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 7px;
+    top: 11px;
+    cursor: pointer;
+  }
+}
+
+.product-tabs{
+  padding-top: 120px;
+  &__top{
+    margin-bottom: 40px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  &__top-item{
+    display: inline-block;
+    color: $default;
+    @extend %roboto-400;
+    font-size: 22px;
+    margin-bottom: 10px;
+    & + .product-tabs__top-item{
+      margin-left: 60px;
+    }
+  }
+  &__top-item--active{
+    color: $title;
+    position: relative;
+    &::after{
+      @extend %pseudo;
+      left: 0;
+      right: 0;
+      bottom: -11px;
+      width: 100%;
+      height: 1px;
+      background-color: $accent;
+    }
+  }
+  &__item{
+    display: none;
+    margin-bottom: 60px;
+  }
+  &__item--active{
+    display: block;
+  }
+  &__content-item{
+    display: flex;
+    margin-bottom: 35px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__content-img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 30px;
+  }
+  &__box-top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  &__box-title{
+    display: flex;
+  }
+  &__box-author{
+    @extend %roboto-400;
+    color: $title;
+    margin-right: 15px;
+  }
+  &__box-date{
+    padding-left: 17px;
+    position: relative;
+    &::before{
+      content: "|";
+      position: absolute;
+      left: 0;
+    }
+  }
+  &__star{
+    margin: 0;
+  }
+  &__box-text{
+    margin-bottom: 5px;
+  }
+  &__box-reply{
+    padding-left: 26px;
+    color: $default;
+    position: relative;
+    &::before{
+      @extend %pseudo;
+      width: 15px;
+      height: 12px;
+      background-image: url('../images/icons/reply.svg');
+      left: 0;
+      top: 5px;
+    }
+  }
+  &__review-title{
+    @extend %roboto-400;
+    font-size: 22px;
+    color: $title;
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 40px;
+    &::after{
+      @extend %pseudo;
+      width: 50px;
+      height: 2px;
+      background-color: $accent;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  &__rate{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__rate-label{
+    & + .product-tabs__rate-label{
+      margin-left: 28px;
+    }
+  }
+  &__rate-text{
+    @extend %quicksand-500;
+    color: $title;
+    margin-right: 60px;
+  }
+  &__rate-input{
+    @extend %radio-hide;
+    &:checked + .product-tabs__rate-stars{
+      path{
+        fill: #ffc35b;
+      }
+    }
+  }
+  &__rate-stars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    path{
+      fill: #ccccce;
+    }
+  }
+  &__review-box{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  &__review-input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #f0f0f0;
+    padding: 0 20px;
+    outline: none;
+    & + .product-tabs__review-input{
+      margin-left: 30px;
+    }
+  }
+  &__review-textarea{
+    min-width: 100%;
+    height: 225px;
+    border: 1px solid #f0f0f0;
+    padding: 20px;
+    resize: none;
+    outline: none;
+  }
+  &__review-btn{
+    @extend %btn;
+    cursor: pointer;
+    margin-top: 40px;
+  }
+}
+
+.product-related{
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &__img{
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  &__item-title{
+    @extend %roboto-400;
+    font-size: 18px;
+    color: $title;
+    margin: 10px 0;
+  }
+  &__price--old{
+    text-decoration: line-through;
+    margin-right: 20px;
+  }
+  &__price--new{
+    color: $title;
+  }
+}

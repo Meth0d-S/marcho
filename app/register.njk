@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/register.min.css">
+</head>
+
+<body>
+
+  {%include ('app/module/_header/_header.html')%}
+
+  <main class="main">
+
+    <section class="top">
+      <div class="top__container">
+        <div class="top__inner">
+          <div class="top__title">register</div>
+          <div class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Home</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="login">
+      <div class="login__links">
+        <a class="login__link login__link--active" href="#">register</a>
+        <a class="login__link" href="#">login</a>
+      </div>
+      <form class="login__form" action="#">
+        <label class="login__label">
+          Username or email address*
+          <input class="login__input" type="text" required>
+        </label>
+        <label class="login__label">
+          Password*
+          <input class="login__input" type="password" required>
+        </label>
+        <p class="login__text">
+          A password will be sent to your email address.
+        </p>
+        <p class="login__text">
+          Your personal data will be used to support your experience throughout this website, to manage access to your
+          account, and for other purposes described in our privacy policy.
+        </p>
+        <label class="login__label">
+          <input type="checkbox" required>
+          Agree with Terms & Conditions
+        </label>
+        <button class="login__btn">log in</button>
+      </form>
+      <a class="login__lost" href="#">Lost your password?</a>
+    </section>
+
+  </main>
+
+  {% include ('app/module/_footer/_footer.html') %}
+
+  <script src="./js/main.min.js"></script>
+</body>
+
+</html>

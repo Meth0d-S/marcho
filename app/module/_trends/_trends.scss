@@ -1,0 +1,209 @@
+.trends{
+  padding: 120px 0;
+  &__link{
+    margin: 0 auto;
+    width: 170px;
+    height: 50px;
+    border: 1px solid $accent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    @extend %roboto-400;
+    color: $title;
+  }
+}
+
+.trends-gallery{
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px 40px;
+  text-align: center;
+  &__item{
+    &.trends-gallery__item--list{
+      width: 100%;
+      display: flex;
+      text-align: left;
+      .trends-gallery__img-box{
+        min-width: 200px;
+      }
+      .trends-gallery__img{
+        height: 250px;
+        width: 200px;
+      }
+      .trends-gallery__pseudo{
+        width: 114px;
+        background-color: transparent;
+        box-shadow: none;
+        .trends-gallery__pseudo-search,
+        .trends-gallery__pseudo-fav{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover{
+            path{
+              fill: $accent;
+            }
+          }
+          path{
+            fill: $default;
+          }
+        }
+        .trends-gallery__pseudo-cart{
+          display: none;
+        }
+      }
+      .trends-gallery__wrapper-box{
+        padding: 30px 40px 0 40px;
+        border: 1px solid #ececec;
+        border-left: none;
+        max-height: 250px;
+      }
+      .trends-gallery__item-inner{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .trends-gallery__item-title{
+        order: -1;
+        width: 100%;
+        text-align: left;
+        margin: 0 0 10px;
+      }
+      .trends-gallery__item-price{
+        order: -1;
+      }
+      .star{
+        margin-left: 40px; 
+        margin-right: auto;
+      }
+      .trends-gallery__content-box{
+        display: block;
+      }
+      .trends-gallery__item-text{
+        margin-bottom: 25px;
+      }
+      .trends-gallery__item-btn{
+        @extend %btn;
+        background-color: $title;
+        box-shadow: none;
+        text-transform: none;
+        cursor: pointer;
+        &:hover{
+          @extend %btn;
+          text-transform: none;
+        }
+      }
+    }
+    &:hover{
+      .trends-gallery__pseudo{
+        transform: translate(-50%, 0%);
+      }
+    }
+  }
+  &__img-box{
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  &__img{
+    height: 370px;
+    max-width: 370px;
+    object-fit: cover;
+  }
+  &__pseudo{
+    position: absolute;
+    width: 210px;
+    height: 50px;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 400%);
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all .5s;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+  }
+  &__pseudo-search,
+  &__pseudo-cart,
+  &__pseudo-fav{
+    display: flex;
+    align-items: center;
+  }
+  &__pseudo-cart{
+    position: relative;
+    &::after,
+    &::before{
+      @extend %pseudo;
+      width: 1px;
+      height: 30px;
+      background-color: #ececec;
+    }
+    &::after{
+      left: -27px;
+    }
+    &::before{
+      right: -27px;
+    }
+  }
+  &__pseudo-link{
+    path{
+      fill: #29282d;
+      transition: all .5s;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &__pseudo-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    path{
+      fill: #29282d;
+      transition: all .5s;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &__item-title{
+    @extend %roboto-400;
+    font-size: 22px;
+    color: $title;
+    margin: 15px 0;
+    text-align: center;
+  }
+  &__item-price{
+    display: flex;
+    justify-content: center;
+  }
+  &__item-price--new{
+    color: $title;
+    @extend %roboto-500;
+    margin-right: 22px;
+  }
+  &__item-price--old{
+    @extend %roboto-400;
+    text-decoration: line-through;
+  }
+  &__content-box{
+    display: none;
+  }
+}
+
+.star{
+  margin: 0 auto;
+}

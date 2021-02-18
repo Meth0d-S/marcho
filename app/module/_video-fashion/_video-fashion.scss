@@ -1,0 +1,32 @@
+.video-fashion{
+  padding: 120px 0;
+  background-color: $bg;
+  background-image: url(../images/decor/video-pattern.svg);
+  &__inner{
+    display: flex;
+  }
+  &__video{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 535px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 65px;
+  }
+  &__subtitle{
+    font-size: 22px;
+    color: $accent;
+    text-transform: uppercase;
+  }
+  &__title,
+  &__text{
+    text-align: left;
+  }
+  &__btn{
+    display: inline-block;
+    @extend %btn;
+  }
+}

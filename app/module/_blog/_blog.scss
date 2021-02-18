@@ -1,0 +1,102 @@
+.blog{
+  margin-bottom: 165px;
+  background-image: url('../images/decor/blog-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    &::before{
+      @extend %pseudo;
+      width: 126px;
+      height: 53px;
+      background-image: url('../images/decor/blog-before.svg');
+      top: -33px;
+      right: -26px;
+      z-index: -1;
+    }
+  }
+  &__item{
+    max-width: 370px;
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    transition: all .5s;
+    &:hover{
+      box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+      border: transparent;
+      .blog__item-link-more{
+        & span{
+          color: $accent;
+        }
+        path{
+          fill: $accent;
+        }
+      }
+    }
+  }
+  &__item-link{
+    display: block;
+  }
+  &__item-img{
+    height: 290px;
+    max-width: 370px;
+    object-fit: cover;
+  }
+  &__item-box{
+    padding: 30px 40px;
+  }
+  &__item-info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__item-author,
+  &__item-date{
+    padding-left: 30px;
+    @extend %quicksand-500;
+    color: $default;
+    font-size: 16px;
+    line-height: 26px;
+    position: relative;
+    &::after{
+      @extend %pseudo;
+      width: 20px;
+      height: 20px;
+      left: 0;
+    }
+  }
+  &__item-author::after{
+    background-image: url('../images/icons/user-gray.svg');
+    top: 1px;
+
+  }
+  &__item-date::after{
+    background-image: url('../images/icons/clock.svg');
+    top: 4px;
+  }
+  &__item-title{
+    @extend %roboto-400;
+    color: $title;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  &__item-link-more{
+    display: flex;
+    align-items: center;
+    svg{
+      margin-top: 2px;
+    }
+    path{
+      transition: all .5s;
+      fill: $default;
+    }
+  }
+  & span{
+    transition: all .5s;
+    display: block;
+    color: $default;
+    margin-right: 5px;
+  }
+}
